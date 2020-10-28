@@ -15,4 +15,7 @@ https://www.oracle.com/java/technologies/javase-downloads.html
 - Last ned intellij IDE community:
 https://www.jetbrains.com/idea/download/#section=windows
 
+- Last ned Git
+https://git-scm.com/download/win
+
 
