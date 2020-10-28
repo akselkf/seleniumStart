@@ -19,3 +19,5 @@ https://www.jetbrains.com/idea/download/#section=windows
 https://git-scm.com/download/win
 
 
+Link til PRO:
+192.168.11.153:20000
