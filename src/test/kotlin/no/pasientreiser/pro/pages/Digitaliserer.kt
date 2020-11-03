@@ -17,6 +17,7 @@ open class Digitaliserer(val driver: ChromeDriver) {
 
     fun tilTilknytning() {
         driver.get(proLink)
+        vent()
         driver.findElementById("oversikt-tilknytning").click()
     }
 
