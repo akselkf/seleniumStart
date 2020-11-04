@@ -6,18 +6,13 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.support.ui.Select
 
+
 open class Digitaliserer(val driver: ChromeDriver) {
 
     val saksnummer: String get() = driver.findElementById("person-info-saksnummer").text
 
-    fun vent(millis: Long = 75) {
-        Thread.sleep(millis)
-
-    }
-
     fun tilTilknytning() {
         driver.get(proLink)
-        vent()
         driver.findElementById("oversikt-tilknytning").click()
     }
 
@@ -32,9 +27,9 @@ open class Digitaliserer(val driver: ChromeDriver) {
     }
 
     fun hentNeste() {
-        Thread.sleep(50)
+        vent()
         driver.findElementById("hentNeste").click()
-        Thread.sleep(100)
+        vent()
     }
 
     fun clearSendReturnTab(field: WebElement, keysToSend: String) {
@@ -66,9 +61,9 @@ open class Digitaliserer(val driver: ChromeDriver) {
         dropdown.selectByVisibleText(newText)
     }
 
-
-
 }
 
 
-
+fun vent(millis: Long = 55) {
+    Thread.sleep(millis)
+}

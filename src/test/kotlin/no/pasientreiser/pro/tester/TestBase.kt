@@ -32,6 +32,9 @@ abstract class TestBase {
         driver.findElementById("login-submit").click()
     }
 
+    /**
+     * Henter nester sak fra stegene Tilknytt eller Merke bilag og forsikrer at saksnummeret forandrer seg mellom sakene.
+     */
     fun hentNesteOgAssert(digitaliserer: Digitaliserer) {
         val forsteSak = digitaliserer.saksnummer
         digitaliserer.hentNeste()

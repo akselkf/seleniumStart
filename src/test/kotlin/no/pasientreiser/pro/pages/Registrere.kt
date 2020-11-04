@@ -1,7 +1,5 @@
 package no.pasientreiser.pro.pages
 
-import org.openqa.selenium.Keys
-import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
 
 class Registrere(driver: ChromeDriver) : Digitaliserer(driver) {
@@ -45,10 +43,11 @@ class Registrere(driver: ChromeDriver) : Digitaliserer(driver) {
 
     fun ferdigRegistrert() {
         driver.findElementById("buttonFerdigRegistrert").click()
-        Thread.sleep(50)
+        vent()
         if (driver.findElementsById("bekreftKnapp").size > 0) {
             driver.findElementById("bekreftKnapp").click()
         }
     }
+
 
 }
