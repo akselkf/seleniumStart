@@ -15,7 +15,7 @@ abstract class TestBase {
 
     @Before
     fun setup() {
-        //System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe")
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe")
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS)
         login(driver)
     }

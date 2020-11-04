@@ -1,8 +1,7 @@
 package oppgaver
 
 import no.pasientreiser.pro.tester.TestBase
-import org.junit.jupiter.api.Test
-
+import org.junit.Test
 class Oppgaver: TestBase() {
 
     /**
@@ -12,6 +11,8 @@ class Oppgaver: TestBase() {
 
     @Test
     fun `kan simulere scanning til PRO`() {
+        home(driver)
+        Thread.sleep(2000)
     }
 
 
