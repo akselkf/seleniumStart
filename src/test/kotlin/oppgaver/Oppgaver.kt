@@ -1,8 +1,29 @@
 package oppgaver
 
 import no.pasientreiser.pro.tester.TestBase
+import no.pasientreiser.pro.tester.proLink
+import org.junit.Before
 import org.junit.Test
-class Oppgaver: TestBase() {
+import org.openqa.selenium.chrome.ChromeDriver
+import java.util.concurrent.TimeUnit
+
+val driver = ChromeDriver()
+
+internal class Oppgaver {
+
+    @Before
+    fun setup() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe")
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS)
+    }
+
+    fun login(driver: ChromeDriver) {
+        driver.get(proLink)
+        driver.findElementById("login-username").sendKeys("admin")
+        driver.findElementById("login-password").sendKeys("admin")
+        driver.findElementById("login-submit").click()
+    }
+
 
     /**
      *  Oppgave 1
@@ -11,8 +32,7 @@ class Oppgaver: TestBase() {
 
     @Test
     fun `kan simulere scanning til PRO`() {
-        home(driver)
-        Thread.sleep(2000)
+
     }
 
 
@@ -40,7 +60,10 @@ class Oppgaver: TestBase() {
      */
     @Test
     fun `Kan markere bilag med dato, type og beløp`() {
-
+        driver.get(proLink)
+        login(driver)
+        driver.findElementByXPath("//*[@id=\"oversikt-tilknytning\"]/h5/span[1]").click()
+        Thread.sleep(2000)
     }
 
 

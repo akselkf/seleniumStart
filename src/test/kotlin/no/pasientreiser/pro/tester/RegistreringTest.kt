@@ -8,7 +8,7 @@ class RegistreringTest : TestBase() {
 
     @Test
     fun `kan ferdigregistrere en sak` (){
-        val digitaliserer = Registrere(driver)
+            val digitaliserer = Registrere(driver)
         digitaliserer.tilRegistrering()
         digitaliserer.slettReiser()
 

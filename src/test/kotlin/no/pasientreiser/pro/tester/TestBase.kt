@@ -4,12 +4,13 @@ import no.pasientreiser.pro.pages.Digitaliserer
 import org.junit.After
 import org.junit.Assert
 import org.junit.Before
+import org.junit.BeforeClass
+import org.junit.jupiter.api.BeforeEach
 import org.openqa.selenium.chrome.ChromeDriver
 import java.util.concurrent.TimeUnit
 
-const val proLink = "localhost:20000"
-
-abstract class TestBase {
+const val proLink = "http://192.168.11.153:20000"
+open class TestBase {
 
     val driver = ChromeDriver()
 
@@ -17,7 +18,7 @@ abstract class TestBase {
     fun setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe")
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS)
-        login(driver)
+        login()
     }
 
     @After
@@ -25,7 +26,7 @@ abstract class TestBase {
         driver.close()
     }
 
-    fun login(driver: ChromeDriver) {
+    fun login() {
         home(driver)
         driver.findElementById("login-username").sendKeys("admin")
         driver.findElementById("login-password").sendKeys("admin")
