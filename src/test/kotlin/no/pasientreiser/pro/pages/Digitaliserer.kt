@@ -6,8 +6,11 @@ import org.openqa.selenium.WebElement
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.support.ui.Select
 
-
 open class Digitaliserer(val driver: ChromeDriver) {
+
+    init {
+        //System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver.exe")
+    }
 
     val saksnummer: String get() = driver.findElementById("person-info-saksnummer").text
 
@@ -62,6 +65,7 @@ open class Digitaliserer(val driver: ChromeDriver) {
     }
 
 }
+
 
 
 fun vent(millis: Long = 55) {

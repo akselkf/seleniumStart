@@ -116,6 +116,5 @@ class OppgaverLosning : TestBase() {
         digitaliserer.ferdigRegistrert()
         digitaliserer.tilRegistrering()
         Assert.assertNotEquals(saksnummer, digitaliserer.saksnummer)
-
     }
 }
