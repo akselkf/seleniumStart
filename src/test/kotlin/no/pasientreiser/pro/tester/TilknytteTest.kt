@@ -21,9 +21,7 @@ class TilknytteTest : TestBase() {
     @Test
     fun `Kan tilknytte mange på rad`() {
         digitaliserer.tilTilknytning()
-        repeat(10) {
-            digitaliserer.tilknyttOgHentNeste(testpasienter.random())
-        }
+        repeat(10) { digitaliserer.tilknyttOgHentNeste(testpasienter.random()) }
     }
 
 

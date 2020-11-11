@@ -26,6 +26,7 @@ open class Digitaliserer(val driver: ChromeDriver) {
 
     fun tilRegistrering() {
         driver.get(proLink)
+        vent()
         driver.findElementById("oversikt-registrering").click()
     }
 
@@ -36,6 +37,7 @@ open class Digitaliserer(val driver: ChromeDriver) {
     }
 
     fun clearSendReturnTab(field: WebElement, keysToSend: String) {
+        vent()
         field.clear()
         field.sendKeys(keysToSend)
         field.sendKeys(Keys.RETURN)
@@ -57,6 +59,7 @@ open class Digitaliserer(val driver: ChromeDriver) {
     fun markAndSend(field: WebElement, keysToSend: String) {
         field.sendKeys(Keys.chord(Keys.CONTROL, "a"))
         field.sendKeys(keysToSend)
+        field.sendKeys(Keys.TAB)
     }
 
     open fun setDropdownValue(dropdownElement: WebElement, newText: String) {
