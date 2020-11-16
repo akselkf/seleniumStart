@@ -9,11 +9,16 @@ import org.junit.Test
 
 class ScannTilknyttMarker : TestBase() {
 
+@Test
+fun `scann mange saker` (){
+    //PostMottak(driver).scann(100)
+    tilknyttTilfeldig(10)
+}
 
     @Test
     fun `scannTilknyttMarker`() {
-        //PostMottak(driver).scann(40)
-        //tilknyttTilfeldig(10)
+        PostMottak(driver).scann(40)
+        tilknyttTilfeldig(10)
 
         val merkeBilag = MerkeBilag(driver)
         merkeBilag.tilMerkeBilag()

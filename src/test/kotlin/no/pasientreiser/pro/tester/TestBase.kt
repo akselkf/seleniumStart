@@ -11,7 +11,7 @@ const val proLink = "localhost:20000"
 
 abstract class TestBase {
 
-    val driver = ChromeDriver()
+    val driver: ChromeDriver get() = ChromeDriver()
 
     @Before
     fun setup() {
